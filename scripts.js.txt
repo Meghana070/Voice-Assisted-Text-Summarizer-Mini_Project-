@@ -1,0 +1,19 @@
+const form = document.getElementById("audioForm");
+
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const res = await fetch("/process_audio", {
+        method: "POST",
+        body: data
+    });
+
+    const result = await res.json();
+
+    document.getElementById("results").style.display = "block";
+    document.getElementById("transcript").textContent = result.transcript;
+    document.getElementById("summary").textContent = result.summary;
+    document.getElementById("overall").textContent = result.overall_sentiment;
+});
