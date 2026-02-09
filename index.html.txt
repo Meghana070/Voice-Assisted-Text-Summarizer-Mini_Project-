@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Voice Assisted Text Summarizer</h1>
+
+    <form id="audioForm">
+        <input type="file" name="file" accept="audio/*" required>
+        <button type="submit">Process</button>
+    </form>
+
+    <div id="results" style="display:none;">
+        <p><b>Transcript:</b> <span id="transcript"></span></p>
+        <p><b>Summary:</b> <span id="summary"></span></p>
+        <p><b>Overall Sentiment:</b> <span id="overall"></span></p>
+    </div>
+
+    <canvas id="sentimentChart"></canvas>
+</div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
