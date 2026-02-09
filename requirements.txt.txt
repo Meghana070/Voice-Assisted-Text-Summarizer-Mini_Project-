@@ -1,0 +1,10 @@
+flask
+requests
+pydub
+transformers
+pyngrok
+python-dotenv
+torch
+spacy
+nltk
+gensim
